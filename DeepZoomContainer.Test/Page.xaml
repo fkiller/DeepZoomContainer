@@ -8,20 +8,20 @@
 		<basics:TabControl Margin="0,301,0,0" VerticalAlignment="Stretch" Grid.Row="0" SelectedIndex="0" d:LayoutOverrides="VerticalAlignment">
 			<basics:TabItem Header="Viewport">
 				<Grid>
-					<TextBox x:Name="txtZoom" Canvas.Top="330" Canvas.Left="80" MaxLength="20" TabIndex="0" Margin="155.838,32,9.05,0" Height="20" VerticalAlignment="Top" Text="1.0" />
-					<TextBox x:Name="txtOX" Canvas.Top="380" Canvas.Left="130" MaxLength="20" TabIndex="0" Margin="156.227,56,8.661,0" Height="20" VerticalAlignment="Top" Text="0.0" />
-					<TextBox x:Name="txtOY" Canvas.Top="410" Canvas.Left="170" MaxLength="20" TabIndex="0" Margin="156,80,8,0" Height="20" VerticalAlignment="Top" Text="0.0" />
-					<TextBlock Height="20" HorizontalAlignment="Left" Margin="8,32,0,0" VerticalAlignment="Top" Width="144.283" Text="ViewportWidth :" TextWrapping="Wrap" d:LayoutOverrides="Width"/>
-					<TextBlock Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144.283" Text="ViewportOrientation.X :" TextWrapping="Wrap" Margin="8,56,0,0" d:LayoutOverrides="Width"/>
-					<TextBlock Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144.283" Text="ViewportOrientation.Y :" TextWrapping="Wrap" Margin="8,80,0,0" d:LayoutOverrides="Width"/>
+					<TextBox x:Name="txtZoom" Canvas.Top="330" Canvas.Left="80" MaxLength="20" TabIndex="0" Margin="156,8,9,0" Height="20" VerticalAlignment="Top" Text="0.1" />
+					<TextBox x:Name="txtOX" Canvas.Top="380" Canvas.Left="130" MaxLength="20" TabIndex="0" Margin="156,32,9,0" Height="20" VerticalAlignment="Top" Text="0.45" d:LayoutOverrides="VerticalAlignment" />
+					<TextBox x:Name="txtOY" Canvas.Top="410" Canvas.Left="170" MaxLength="20" TabIndex="0" Margin="156,56,9,0" Height="20" VerticalAlignment="Top" Text="0.2" />
+					<TextBlock Height="20" HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Width="144.283" Text="ViewportWidth :" TextWrapping="Wrap" d:LayoutOverrides="Width"/>
+					<TextBlock Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144.283" Text="ViewportOrientation.X :" TextWrapping="Wrap" Margin="8,32,0,0" d:LayoutOverrides="VerticalAlignment, Width"/>
+					<TextBlock Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144.283" Text="ViewportOrientation.Y :" TextWrapping="Wrap" Margin="8,56,0,0" d:LayoutOverrides="Width"/>
 				</Grid>
 			</basics:TabItem>
 			<basics:TabItem Header="ScrollLimit">
 				<Grid>
 					<TextBox x:Name="txtBoundaryLeft" Canvas.Top="330" Canvas.Left="80" MaxLength="20" TabIndex="0" Margin="157,13,8,0" Height="20" VerticalAlignment="Top" Text="0.0" />
-					<TextBox x:Name="txtBoundaryTop" Canvas.Top="380" Canvas.Left="130" MaxLength="20" TabIndex="0" Margin="157,37,8,56" Text="0.064" />
+					<TextBox x:Name="txtBoundaryTop" Canvas.Top="380" Canvas.Left="130" MaxLength="20" TabIndex="0" Margin="157,37,8,56" Text="0.06" />
 					<TextBox x:Name="txtBoundaryRight" Canvas.Top="410" Canvas.Left="170" MaxLength="20" TabIndex="0" Margin="156,0,8,32" Height="20" VerticalAlignment="Bottom" Text="1.0" />
-					<TextBox x:Name="txtBoundaryBottom" Canvas.Top="410" Canvas.Left="170" MaxLength="20" TabIndex="0" Margin="156,0,8,8" Text="0.86" Height="20" VerticalAlignment="Bottom" />
+					<TextBox x:Name="txtBoundaryBottom" Canvas.Top="410" Canvas.Left="170" MaxLength="20" TabIndex="0" Margin="156,0,8,8" Text="0.92" Height="20" VerticalAlignment="Bottom" />
 					<TextBlock Margin="8,13,0,0" Width="144.283" Text="ScrollLimit.Left :" TextWrapping="Wrap" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 					<TextBlock HorizontalAlignment="Left" Margin="8,37,0,56" Width="144.283" Text="ScrollLimit.Top :" TextWrapping="Wrap"/>
 					<TextBlock Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="144.283" Text="ScrollLimit.Right :" TextWrapping="Wrap" Margin="8,0,0,32"/>
@@ -34,7 +34,7 @@
 					<CheckBox Height="20" Width="158" Content="UseSpring" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,8,0,0" x:Name="chkUseSpring" IsChecked="True"/>
 					<CheckBox HorizontalAlignment="Left" Margin="8,56,0,37" Width="158" Content="MouseDrag" x:Name="chkMouseDrag" IsChecked="True"/>
 					<CheckBox Height="20" Width="158" Content="Layer1Visible" HorizontalAlignment="Left" Margin="8,0,0,13" VerticalAlignment="Bottom" x:Name="chkLayer1Visible" IsChecked="True"/>
-					<CheckBox Height="20" Content="ScrollLimit == null" Margin="188,8,42,0" VerticalAlignment="Top" x:Name="chkUseScrollLimit" IsChecked="True"/>
+					<CheckBox Height="20" Content="ScrollLimit == null" Margin="188,8,42,0" VerticalAlignment="Top" x:Name="chkUseScrollLimit" IsChecked="False"/>
 				</Grid>
 			</basics:TabItem>
 		</basics:TabControl>

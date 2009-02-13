@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DeepZoomContainer</name>
+    </assembly>
+    <members>
+        <member name="T:ROH.Web.Client.Silverlight.PushPin">
+            <summary>
+            PushPin Class
+            (ver. 1.00.00)
+            
+            This class has a vector image of the pushpin. Orientation of this image is set to bottom-pinpoint, so its position is exactly same as its aim point.
+            There are 3 variables; Color, Initial, Dot, so you can modify its style using those.
+            
+            ROH Holding Company
+            Won Dong (fkiller@gmail.com)
+            </summary>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.PushPin.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.PushPin.#ctor">
+            <summary>
+            PushPin() Constructor
+            </summary>
+            <remarks>
+            Constructor without parametors. Its default style is yellow-backgrounded dot.
+            </remarks>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.PushPin.#ctor(System.Char,System.Windows.Point)">
+            <summary>
+            PushPin() Constructor
+            </summary>
+            <remarks>
+            Constructor with initial and location.
+            </remarks>
+            <param name="Initial">
+            It indicates initial charactor of pushpin. If it's space ' ', then dot will be shown. If initial is <c>char.MinValue</c>, then nothing will be shown.
+            </param>
+            <param name="Location">
+            Location of pushpin. Its orientation is set to bottom-pinpoint, so its position is exactly same as its aim point.
+            </param>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.PushPin.#ctor(System.Char,System.Windows.Point,System.Windows.Controls.Panel)">
+            <summary>
+            PushPin() Constructor
+            </summary>
+            <remarks>
+            Constructor with initial, location, and base panel.
+            </remarks>
+            <param name="Initial">
+            It indicates initial charactor of pushpin. If it's space ' ', then dot will be shown. If initial is <c>char.MinValue</c>, then nothing will be shown.
+            </param>
+            <param name="Location">
+            Location of pushpin. Its orientation is set to bottom-pinpoint, so its position is exactly same as its aim point.
+            </param>
+            <param name="Base">
+            Panel that will be parent of this class.
+            </param>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.PushPin.#ctor(System.Char,System.Windows.Media.Color)">
+            <summary>
+            PushPin() Constructor
+            </summary>
+            <remarks>
+            Constructor with initial, location, and base panel.
+            </remarks>
+            <param name="Initial">
+            It indicates initial charactor of pushpin. If it's space ' ', then dot will be shown. If initial is <c>char.MinValue</c>, then nothing will be shown.
+            </param>
+            <param name="Color">
+            Pushpin's color. Solid color only.
+            </param>
+        </member>
+        <member name="P:ROH.Web.Client.Silverlight.PushPin.Scale">
+            <summary>
+            Property. Size of pushpin. Default value is 1.0 (Width:35, Height:63).
+            </summary>
+        </member>
+        <member name="T:ROH.Web.Client.Silverlight.DeepZoomContainer">
+            <summary>
+            DeepZoomContainer class.
+            (ver. 1.00.00)
+            
+            It's encapsulated version of <c>MultiScaleImage</c>. It can contain UIElements such as pushpins, images, and paths. Like <c>MultiScaleImage</c>, it is ViewPoint-based, and every contained objects will move when viewpoint of <c>MultiScaleImage</c> changes.
+            
+            ROH Holding Company
+            Won Dong (fkiller@gmail.com)
+            </summary>
+        </member>
+        <member name="F:ROH.Web.Client.Silverlight.DeepZoomContainer.WheelZoom">
+            <summary>
+            Property. It allows wheel zooming.
+            </summary>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.DeepZoomContainer.#ctor">
+            <summary>
+            Constructor. In default, MouseDrag, and WheelZoom is set to true.
+            </summary>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.DeepZoomContainer.Add(System.Double,System.Double,System.Windows.UIElement)">
+            <summary>
+            Method that adds a UIElement onto MultiScaleImage.
+            </summary>
+            <param name="x">X position on MultiScaleImage. 0 is left. 1.0 is right.</param>
+            <param name="y">Y position on MultiScaleImage. 0 is top. 1.0 is bottom.</param>
+            <param name="value">Object to be added.</param>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.DeepZoomContainer.AddPin(System.Double,System.Double,System.Windows.Media.Color,System.Char)">
+            <summary>
+            Method that adds a pushpin onto MultiScaleImage.
+            </summary>
+            <param name="x">X position on MultiScaleImage. 0 is left. 1.0 is right.</param>
+            <param name="y">Y position on MultiScaleImage. 0 is top. 1.0 is bottom.</param>
+            <param name="color">Color of the pushpin.</param>
+            <param name="initial">Initial charactor of the pushpin.</param>
+            <returns>PushPin object that is added.</returns>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.DeepZoomContainer.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.DeepZoomContainer.ROH#Web#Client#Silverlight#IMouseWheelObserver#add_MouseEnter(System.Windows.Input.MouseEventHandler)">
+            <summary>
+            DeepZoomContainer class.
+            (ver. 1.00.00)
+            
+            It's encapsulated version of <c>MultiScaleImage</c>. It can contain UIElements such as pushpins, images, and paths. Like <c>MultiScaleImage</c>, it is ViewPoint-based, and every contained objects will move when viewpoint of <c>MultiScaleImage</c> changes.
+            
+            ROH Holding Company
+            Won Dong (fkiller@gmail.com)
+            </summary>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.DeepZoomContainer.ROH#Web#Client#Silverlight#IMouseWheelObserver#remove_MouseEnter(System.Windows.Input.MouseEventHandler)">
+            <summary>
+            DeepZoomContainer class.
+            (ver. 1.00.00)
+            
+            It's encapsulated version of <c>MultiScaleImage</c>. It can contain UIElements such as pushpins, images, and paths. Like <c>MultiScaleImage</c>, it is ViewPoint-based, and every contained objects will move when viewpoint of <c>MultiScaleImage</c> changes.
+            
+            ROH Holding Company
+            Won Dong (fkiller@gmail.com)
+            </summary>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.DeepZoomContainer.ROH#Web#Client#Silverlight#IMouseWheelObserver#add_MouseLeave(System.Windows.Input.MouseEventHandler)">
+            <summary>
+            DeepZoomContainer class.
+            (ver. 1.00.00)
+            
+            It's encapsulated version of <c>MultiScaleImage</c>. It can contain UIElements such as pushpins, images, and paths. Like <c>MultiScaleImage</c>, it is ViewPoint-based, and every contained objects will move when viewpoint of <c>MultiScaleImage</c> changes.
+            
+            ROH Holding Company
+            Won Dong (fkiller@gmail.com)
+            </summary>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.DeepZoomContainer.ROH#Web#Client#Silverlight#IMouseWheelObserver#remove_MouseLeave(System.Windows.Input.MouseEventHandler)">
+            <summary>
+            DeepZoomContainer class.
+            (ver. 1.00.00)
+            
+            It's encapsulated version of <c>MultiScaleImage</c>. It can contain UIElements such as pushpins, images, and paths. Like <c>MultiScaleImage</c>, it is ViewPoint-based, and every contained objects will move when viewpoint of <c>MultiScaleImage</c> changes.
+            
+            ROH Holding Company
+            Won Dong (fkiller@gmail.com)
+            </summary>
+        </member>
+        <member name="P:ROH.Web.Client.Silverlight.DeepZoomContainer.MultiScaleImage">
+            <summary>
+            Property. It's <c>MultiScaleImage</c> class, which is in DeepZoomContainer. Read-only.
+            </summary>
+        </member>
+        <member name="P:ROH.Web.Client.Silverlight.DeepZoomContainer.ScrollLimit">
+            <summary>
+            Property. ScrollLimit is a <c>Thickness</c> clsss that defines scroll boundary limitation.
+            </summary>
+        </member>
+        <member name="P:ROH.Web.Client.Silverlight.DeepZoomContainer.MouseDrag">
+            <summary>
+            Property. It allows mouse drag action in multiscaleimage.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:ROH.Web.Client.Silverlight.DeepZoomContainer.Source" -->
+        <member name="P:ROH.Web.Client.Silverlight.DeepZoomContainer.LayerVisibility">
+            <summary>
+            Property. Visibility of added objects layer.
+            </summary>
+        </member>
+        <member name="M:ROH.Web.Client.Silverlight.WheelMouseListener.Dispose">
+            <summary>
+            Detaches from the browser-generated scroll events.
+            </summary>
+        </member>
+    </members>
+</doc>
