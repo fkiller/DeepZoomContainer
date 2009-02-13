@@ -56,7 +56,7 @@ namespace ROH.Web.Client.Silverlight
                     Convert.ToDouble(txtBoundaryRight.Text),
                     Convert.ToDouble(txtBoundaryBottom.Text));*/
             dzcTest.MultiScaleImage.ViewportWidth = 0.4;
-            dzcTest.MultiScaleImage.ViewportOrigin = new Point(-0.1, -0.2);
+            dzcTest.MultiScaleImage.ViewportOrigin = new Point(-0.5, -0.5);
         }
 
         void txtZoom_KeyDown(object sender, KeyEventArgs e)
