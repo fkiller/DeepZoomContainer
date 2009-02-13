@@ -40,23 +40,23 @@ namespace ROH.Web.Client.Silverlight
 
         void MultiScaleImage_ImageOpenSucceeded(object sender, RoutedEventArgs e)
         {
+            dzcTest.AddPin(0.4, 0.5, Colors.DarkGray, 'D').Scale = 1.7;
             dzcTest.AddPin(0.1, 0.8, Colors.Blue, 'A').Scale = 0.7;
             dzcTest.AddPin(0.2, 0.7, Colors.Brown, 'B').Scale = 0.7;
             dzcTest.AddPin(0.3, 0.6, Colors.Cyan, 'C').Scale = 0.7;
-            dzcTest.AddPin(0.4, 0.5, Colors.DarkGray, 'D').Scale = 1.7;
             dzcTest.AddPin(0.5, 0.3, Colors.Gray, 'E').Scale = 0.7;
             dzcTest.AddPin(0.6, 0.2, Colors.Green, 'F').Scale = 0.7;
             dzcTest.AddPin(0.2, 0.4, Colors.Green, ' ').Scale = 0.7;
-            dzcTest.AddPin(0.8, 0.7, Colors.Green, ' ').Scale = 3.7;
             dzcTest.AddPin(0.1, 0.3, Colors.Green, char.MinValue).Scale = 0.7;
             dzcTest.AddPin(0.7, 0.4, Colors.Green, char.MinValue).Scale = 0.7;
             dzcTest.AddPin(0.4, 0.6, Colors.Green, char.MinValue).Scale = 0.7;
-            /*dzcTest.ScrollLimit = new Thickness(Convert.ToDouble(txtBoundaryLeft.Text),
+            dzcTest.AddPin(0.8, 0.7, Colors.Green, ' ').Scale = 3.7;
+            dzcTest.ScrollLimit = new Thickness(Convert.ToDouble(txtBoundaryLeft.Text),
                     Convert.ToDouble(txtBoundaryTop.Text),
                     Convert.ToDouble(txtBoundaryRight.Text),
-                    Convert.ToDouble(txtBoundaryBottom.Text));*/
-            dzcTest.MultiScaleImage.ViewportWidth = 0.4;
-            dzcTest.MultiScaleImage.ViewportOrigin = new Point(-0.5, -0.5);
+                    Convert.ToDouble(txtBoundaryBottom.Text));
+            dzcTest.MultiScaleImage.ViewportWidth = 0.1;
+            dzcTest.MultiScaleImage.ViewportOrigin = new Point(0.45, 0.2);
         }
 
         void txtZoom_KeyDown(object sender, KeyEventArgs e)
