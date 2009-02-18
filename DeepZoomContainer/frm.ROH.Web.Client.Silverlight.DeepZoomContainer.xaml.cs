@@ -5,6 +5,9 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
+/// <summary>
+/// ROH.Web.Client.Silverlight Namespace contains classes to present various informations such as map, geographical objects, polylines, pushpins and etc.
+/// </summery>
 namespace ROH.Web.Client.Silverlight
 {
     /// <summary>
