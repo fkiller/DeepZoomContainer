@@ -17,6 +17,9 @@ Silverlight application that test DeepZoomContainer class.
 /DeepZoomContainer.Test.Web
 Web application that contains DeepZoomContainer.Test silverlight application.
 
+/PathAnimation
+Silverlight Path Animation Class
+
 /Document
 XML Documentation of classes
 
