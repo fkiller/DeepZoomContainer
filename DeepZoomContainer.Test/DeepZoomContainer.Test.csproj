@@ -46,6 +46,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PathAnimation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PathAnimation\Bin\Debug\PathAnimation.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Controls.dll">
       <HintPath>..\..\..\..\..\..\Program Files\Microsoft SDKs\Silverlight\v2.0\Libraries\Client\System.Windows.Controls.dll</HintPath>
       <Private>True</Private>
@@ -105,10 +109,6 @@
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PathAnimation\PathAnimation\PathAnimation.csproj">
-      <Project>{99A2F7CF-1226-4A28-A080-97DA5673C772}</Project>
-      <Name>PathAnimation</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DeepZoomContainer\DeepZoomContainer.csproj">
       <Project>{D8DB678F-4933-4861-BB1B-F8FBDAABE290}</Project>
       <Name>DeepZoomContainer</Name>
