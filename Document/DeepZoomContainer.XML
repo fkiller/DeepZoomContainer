@@ -90,6 +90,13 @@
             Won Dong (fkiller@gmail.com)
             </summary>
         </member>
+        <member name="T:ROH.Web.Client.Silverlight.IMouseWheelObserver">
+            <summary>
+            Wheel Event Observer Interface for Silverlight
+            from
+            http://silverlight.net/blogs/msnow/archive/2008/10/21/silverlight-tip-of-the-day-65-adding-a-mouse-wheel-event-listener-to-your-elements.aspx
+            </summary>
+        </member>
         <member name="F:ROH.Web.Client.Silverlight.DeepZoomContainer.WheelZoom">
             <summary>
             Property. It allows wheel zooming.
@@ -186,6 +193,20 @@
         <member name="P:ROH.Web.Client.Silverlight.DeepZoomContainer.LayerVisibility">
             <summary>
             Property. Visibility of added objects layer.
+            </summary>
+        </member>
+        <member name="T:ROH.Web.Client.Silverlight.MouseWheelArgs">
+            <summary>
+            Wheel Event Argument for Silverlight
+            from
+            http://silverlight.net/blogs/msnow/archive/2008/10/21/silverlight-tip-of-the-day-65-adding-a-mouse-wheel-event-listener-to-your-elements.aspx
+            </summary>
+        </member>
+        <member name="T:ROH.Web.Client.Silverlight.WheelMouseListener">
+            <summary>
+            Wheel Event Handler for Silverlight
+            from
+            http://silverlight.net/blogs/msnow/archive/2008/10/21/silverlight-tip-of-the-day-65-adding-a-mouse-wheel-event-listener-to-your-elements.aspx
             </summary>
         </member>
         <member name="M:ROH.Web.Client.Silverlight.WheelMouseListener.Dispose">

@@ -130,10 +130,10 @@ namespace ROH.Web.Client.Silverlight
         }           
 
         // Function that converts relative location(0.0 left-top, 1.0 bottom-right) to actual location depending on MultiScaleImage's ViewportWidth, and ViewportOrigin.
-        private TranslateTransform ProjectedTransform(Point value)
+        private TranslateTransform ProjectedTranslateTransform(Point value)
         {
             if (msiMap.SubImages.Count > 0)
-                return new TranslateTransform() { X = (msiMap.Width * value.X - msiMap.Width * msiMap.ViewportOrigin.X) / msiMap.ViewportWidth, Y = (msiMap.Height * value.Y - msiMap.Height * msiMap.ViewportOrigin.Y * msiMap.SubImages[0].AspectRatio) / msiMap.ViewportWidth };
+                return new TranslateTransform() { X = (msiMap.Width * value.X - msiMap.Width * msiMap.ViewportOrigin.X) / msiMap.ViewportWidth, Y = ((msiMap.Width / msiMap.SubImages[0].AspectRatio) * value.Y - msiMap.Width * msiMap.ViewportOrigin.Y) / msiMap.ViewportWidth };
             else
                 return null;
         }
@@ -144,6 +144,8 @@ namespace ROH.Web.Client.Silverlight
         public DeepZoomContainer()
         {
             InitializeComponent();
+
+            this.SizeChanged += new SizeChangedEventHandler(DeepZoomContainer_SizeChanged);
             Locations = new Dictionary<UIElement, Point>();
             msiMap.Width = this.Width;
             msiMap.Height = this.Height;
@@ -160,6 +162,12 @@ namespace ROH.Web.Client.Silverlight
             msiMap.UseSprings = true;
 
             WheelMouseListener.Instance.AddObserver(this);
+        }
+
+        void DeepZoomContainer_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            msiMap.Width = this.Width;
+            msiMap.Height = this.Height;            
         }
 
         void msiMap_MouseMove(object sender, MouseEventArgs e)
@@ -201,7 +209,14 @@ namespace ROH.Web.Client.Silverlight
         {
             foreach (UIElement i in grdLayer1.Children)
             {
-                i.RenderTransform = ProjectedTransform(Locations[i]);
+                TransformGroup transformFinal = new TransformGroup();
+                if (i.GetType() == typeof(PushPin)) i.RenderTransform = ProjectedTranslateTransform(Locations[i]);
+                else
+                {
+                    transformFinal.Children.Add(new ScaleTransform() { ScaleX = 1.0 / msiMap.ViewportWidth, ScaleY = 1.0 / msiMap.ViewportWidth });
+                    transformFinal.Children.Add(ProjectedTranslateTransform(Locations[i]));
+                    i.RenderTransform = transformFinal;
+                }
             }
         }
 
@@ -265,7 +280,7 @@ namespace ROH.Web.Client.Silverlight
             {
                 MessageBox.Show(e.Message);
             }
-            value.RenderTransform = ProjectedTransform(Locations[value]);
+            value.RenderTransform = ProjectedTranslateTransform(Locations[value]);
         }
 
         /// <summary>

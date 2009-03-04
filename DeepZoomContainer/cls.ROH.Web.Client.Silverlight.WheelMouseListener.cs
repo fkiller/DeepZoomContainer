@@ -20,9 +20,15 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Collections.Generic;
 using System.Windows.Browser;
+using System.Diagnostics;
 
 namespace ROH.Web.Client.Silverlight
 {
+    /// <summary>
+    /// Wheel Event Observer Interface for Silverlight
+    /// from
+    /// http://silverlight.net/blogs/msnow/archive/2008/10/21/silverlight-tip-of-the-day-65-adding-a-mouse-wheel-event-listener-to-your-elements.aspx
+    /// </summary>
     public interface IMouseWheelObserver
     {
         void OnMouseWheel(MouseWheelArgs args);
@@ -30,6 +36,11 @@ namespace ROH.Web.Client.Silverlight
         event MouseEventHandler MouseLeave;
     }
 
+    /// <summary>
+    /// Wheel Event Argument for Silverlight
+    /// from
+    /// http://silverlight.net/blogs/msnow/archive/2008/10/21/silverlight-tip-of-the-day-65-adding-a-mouse-wheel-event-listener-to-your-elements.aspx
+    /// </summary>
     public class MouseWheelArgs : EventArgs
     {
         private readonly double
@@ -69,18 +80,32 @@ namespace ROH.Web.Client.Silverlight
         }
     }
 
+    /// <summary>
+    /// Wheel Event Handler for Silverlight
+    /// from
+    /// http://silverlight.net/blogs/msnow/archive/2008/10/21/silverlight-tip-of-the-day-65-adding-a-mouse-wheel-event-listener-to-your-elements.aspx
+    /// </summary>
     public class WheelMouseListener
     {
         private Stack<IMouseWheelObserver> _ElementStack;
 
         private WheelMouseListener()
         {
-            this._ElementStack = new Stack<IMouseWheelObserver>();
-            HtmlPage.Window.AttachEvent("DOMMouseScroll", OnMouseWheel);
-            HtmlPage.Window.AttachEvent("onmousewheel", OnMouseWheel);
-            HtmlPage.Document.AttachEvent("onmousewheel", OnMouseWheel);
+            // If this class is called by non-browser(e.g. Expression Blend),
+            // error occurs without exception handling.
+            try
+            {
+                this._ElementStack = new Stack<IMouseWheelObserver>();
+                HtmlPage.Window.AttachEvent("DOMMouseScroll", OnMouseWheel);
+                HtmlPage.Window.AttachEvent("onmousewheel", OnMouseWheel);
+                HtmlPage.Document.AttachEvent("onmousewheel", OnMouseWheel);
 
-            Application.Current.Exit += new EventHandler(OnApplicationExit);
+                Application.Current.Exit += new EventHandler(OnApplicationExit);
+            }
+            catch
+            {
+                Debug.WriteLine("Not browser or not supported brower");
+            }
         }
 
         /// <summary>
@@ -89,9 +114,18 @@ namespace ROH.Web.Client.Silverlight
 
         private void Dispose()
         {
-            HtmlPage.Window.DetachEvent("DOMMouseScroll", OnMouseWheel);
-            HtmlPage.Window.DetachEvent("onmousewheel", OnMouseWheel);
-            HtmlPage.Document.DetachEvent("onmousewheel", OnMouseWheel);
+            // If this class is called by non-browser(e.g. Expression Blend),
+            // error occurs without exception handling.
+            try
+            {
+                HtmlPage.Window.DetachEvent("DOMMouseScroll", OnMouseWheel);
+                HtmlPage.Window.DetachEvent("onmousewheel", OnMouseWheel);
+                HtmlPage.Document.DetachEvent("onmousewheel", OnMouseWheel);
+            }
+            catch
+            {
+                Debug.WriteLine("Not browser or not supported brower");
+            }
         }
 
         public void AddObserver(IMouseWheelObserver element)
