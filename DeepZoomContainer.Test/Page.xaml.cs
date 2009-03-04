@@ -40,6 +40,12 @@ namespace ROH.Web.Client.Silverlight
 
         void MultiScaleImage_ImageOpenSucceeded(object sender, RoutedEventArgs e)
         {
+            Random rndValue = new Random();
+            for (int i = 0; i < 20; i++)
+            {
+                Cars carTest = new Cars(rndValue.NextDouble() * 360.0, rndValue.NextDouble() * 60.0, rndValue.NextDouble()*0.03 + 0.15);
+                dzcTest.Add(rndValue.NextDouble() * 0.1 + 0.1, rndValue.NextDouble() * 0.1 + 0.3, carTest);
+            }
             dzcTest.AddPin(0.4, 0.5, Colors.DarkGray, 'D').Scale = 1.7;
             dzcTest.AddPin(0.1, 0.8, Colors.Blue, 'A').Scale = 0.7;
             dzcTest.AddPin(0.2, 0.7, Colors.Brown, 'B').Scale = 0.7;
@@ -51,6 +57,8 @@ namespace ROH.Web.Client.Silverlight
             dzcTest.AddPin(0.7, 0.4, Colors.Green, char.MinValue).Scale = 0.7;
             dzcTest.AddPin(0.4, 0.6, Colors.Green, char.MinValue).Scale = 0.7;
             dzcTest.AddPin(0.8, 0.7, Colors.Green, ' ').Scale = 3.7;
+            dzcTest.Add(0.0, 0.0, new ROH.Web.Client.Silverlight.Clouds());
+            dzcTest.Add(0.0, 0.0, new Flock());
             dzcTest.ScrollLimit = new Thickness(Convert.ToDouble(txtBoundaryLeft.Text),
                     Convert.ToDouble(txtBoundaryTop.Text),
                     Convert.ToDouble(txtBoundaryRight.Text),

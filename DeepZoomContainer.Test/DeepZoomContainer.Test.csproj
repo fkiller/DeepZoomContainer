@@ -57,6 +57,30 @@
     <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
+    <Resource Include="Car.png" />
+    <Resource Include="Cloud.png" />
+    <Resource Include="flock.png" />
+    <Page Include="Cars.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Clouds.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Flock.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Cars.xaml.cs">
+      <DependentUpon>Cars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Clouds.xaml.cs">
+      <DependentUpon>Clouds.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Flock.xaml.cs">
+      <DependentUpon>Flock.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -81,6 +105,10 @@
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\PathAnimation\PathAnimation\PathAnimation.csproj">
+      <Project>{99A2F7CF-1226-4A28-A080-97DA5673C772}</Project>
+      <Name>PathAnimation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DeepZoomContainer\DeepZoomContainer.csproj">
       <Project>{D8DB678F-4933-4861-BB1B-F8FBDAABE290}</Project>
       <Name>DeepZoomContainer</Name>
